@@ -6,10 +6,6 @@ options(timeout=1800)
 download_dir <- "download"
 fs::dir_create(download_dir)
 
-base_name <- function(filename) {
-  file_path_sans_ext(basename(filename))
-}
-
 print("Downloading Files")
 url='http://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/archive/monthly/tsv'
 ftp=stringr::str_replace(url,"http","ftp")

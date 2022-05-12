@@ -17,17 +17,21 @@ stages:
     - path: R/process.R
       md5: 9d3bb660c1d6e166dffb0049abfc41e6
       size: 425
+    - path: download/
+      md5: f8d4a10176c9dca0b07b9bc4a1401fe2.dir
+      size: 221913150
+      nfiles: 14
     outs:
     - path: data/
-      md5: 5934507019d3332aeace2e1ac4f3a1e1.dir
-      size: 34501781
+      md5: a17e8ed5902c143449ec90cd111e8b14.dir
+      size: 34502145
       nfiles: 1
   download:
     cmd: Rscript R/download.R
     deps:
     - path: R/download.R
-      md5: 2192815e96e549d079640347e587c6f5
-      size: 559
+      md5: c8dc96ebd0d7ecc848df6c5c7efad412
+      size: 481
     outs:
     - path: download/
       md5: f8d4a10176c9dca0b07b9bc4a1401fe2.dir

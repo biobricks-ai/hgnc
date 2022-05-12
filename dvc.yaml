@@ -9,6 +9,7 @@ stages:
   process:
     cmd: Rscript R/process.R
     deps:
+      - download/
       - R/process.R
     outs:
       - data/
