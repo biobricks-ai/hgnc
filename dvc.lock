@@ -15,8 +15,8 @@ stages:
     cmd: Rscript R/process.R
     deps:
     - path: R/process.R
-      md5: d87f308b4b2cb876ef021c5f490aebf5
-      size: 336
+      md5: eae7ea1c73f619d7804c3868bba8fde7
+      size: 225
     - path: download/
       md5: e6edde27937dc53e370ffb854bcd4a38.dir
       size: 16194945
@@ -30,8 +30,8 @@ stages:
     cmd: Rscript R/download.R
     deps:
     - path: R/download.R
-      md5: 3849749098cf4509ed6d5267a44aa49a
-      size: 520
+      md5: 037bd69ce926f02178c864dac5969fab
+      size: 535
     outs:
     - path: download/
       md5: e6edde27937dc53e370ffb854bcd4a38.dir
