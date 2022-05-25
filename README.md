@@ -7,6 +7,8 @@ dependencies:
     url: http://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/archive/
 ---
 
+<a href="https://github.com/biobricks-ai/HGNC/actions"><img src="https://github.com/biobricks-ai/HGNC/actions/workflows/bricktools-check.yaml/badge.svg?branch=master"/></a>
+
 ## Description
 
 ### Data Overview
