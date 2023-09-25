@@ -1,8 +1,11 @@
-.DS_Store
-.RData
+.*
+!.dvc
+!.dvcignore
+!.envrc
+!.github
+!.gitignore
+
 cache
-.DS_Store
-.Rhistory
 HGNC.Rproj
 /data
 /download
