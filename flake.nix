@@ -9,12 +9,21 @@
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    morph-kgc = {
+      url = "github:insilica/nix-morph-kgc";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, hdt-cpp }:
+  outputs = { self, nixpkgs, flake-utils, hdt-cpp, morph-kgc }:
     flake-utils.lib.eachDefaultSystem (system:
       with import nixpkgs { inherit system; }; {
-        devShells.default =
-          mkShell { buildInputs = [ hdt-cpp.packages.${system}.default ]; };
+        devShells.default = mkShell {
+          buildInputs = [
+            hdt-cpp.packages.${system}.default
+            morph-kgc.packages.${system}.default
+          ];
+        };
       });
 }
