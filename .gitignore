@@ -1,6 +1,7 @@
 .*
 !.dvc
 !.dvcignore
+!.editorconfig
 !.envrc
 !.github
 !.gitignore
