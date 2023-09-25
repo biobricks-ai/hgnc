@@ -12,4 +12,12 @@ stages:
       - R/process.R
     outs:
       - data/
-      
+  rml:
+    cmd: bash rml.sh
+    deps:
+      - data/
+      - rml.sh
+      - hgnc_complete_set.rml.ttl
+      - morph-kgc.ini
+    outs:
+      - rdf/

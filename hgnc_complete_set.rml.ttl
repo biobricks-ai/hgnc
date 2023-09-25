@@ -1,0 +1,108 @@
+@base     <http://example.com/base/> .
+@prefix : <http://example.com/base/> .
+@prefix ex: <http://example.com/> .
+
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rdf: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix idot: <http://identifiers.org/idot:> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+:TriplesMap a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "data/hgnc_complete_set.parquet";
+  ];
+
+  rr:subjectMap [
+    rr:template "http://identifiers.org/hgnc/{hgnc_id}";
+    rr:class ex:record;
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate rdf:type;
+    rr:objectMap [ rr:constant dbo:Gene ];
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate dbo:entrezgene;
+    rr:objectMap [
+      rml:reference "entrez_id"
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate dbo:GeneLocation;
+    rr:objectMap [
+      rml:reference "location"
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate obo:SO0005855;
+    rr:objectMap [
+      rml:reference "gene_group"
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate dbo:hgnc_id;
+    rr:objectMap [
+      rml:reference "hgnc_id"
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate dbo:name;
+    rr:objectMap [
+      rml:reference "name"
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate dbo:omim;
+    rr:objectMap [
+      rml:reference "omim_id";
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate dbo:symbol;
+    rr:objectMap [
+      rml:reference "symbol"
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate idot:ccdsId;
+    rr:objectMap [
+      rr:template "http://identifiers.org/ccds/{ccds_id}";
+      rr:termType rr:IRI;
+    ]
+  ];
+
+
+  rr:predicateObjectMap [
+    rr:predicate idot:pubmedId;
+    rr:objectMap [
+      rr:template "http://identifiers.org/pubmed/{pubmed_id}";
+      rr:termType rr:IRI;
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate idot:rgdId;
+    rr:objectMap [
+      rr:template "http://identifiers.org/rgd/{rgd_id}";
+      rr:termType rr:IRI;
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate dbo:uniprot;
+    rr:objectMap [
+      rr:template "http://identifiers.org/uniprot/{uniprot_ids}";
+      rr:termType rr:IRI;
+    ]
+  ].
