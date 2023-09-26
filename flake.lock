@@ -28,17 +28,15 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1694529238,
         "narHash": "sha256-zsNZZGTGnMOf9YpHKJqMSsa0dXbfmxeoJ7xHlrt+xmY=",
-        "owner": "numtide",
-        "repo": "flake-utils",
         "rev": "ff7b65b44d01cf9ba6a71320833626af21126384",
-        "type": "github"
+        "revCount": 87,
+        "type": "tarball",
+        "url": "https://api.flakehub.com/f/pinned/numtide/flake-utils/0.1.87+rev-ff7b65b44d01cf9ba6a71320833626af21126384/018a8a74-649b-792e-a959-2f97793b1129/source.tar.gz"
       },
       "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://flakehub.com/f/numtide/flake-utils/*.tar.gz"
       }
     },
     "hdt-cpp": {
@@ -90,18 +88,15 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1695559356,
         "narHash": "sha256-kXZ1pUoImD9OEbPCwpTz4tHsNTr4CIyIfXb3ocuR8sI=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
         "rev": "261abe8a44a7e8392598d038d2e01f7b33cf26d0",
-        "type": "github"
+        "revCount": 491123,
+        "type": "tarball",
+        "url": "https://api.flakehub.com/f/pinned/NixOS/nixpkgs/0.2305.491123+rev-261abe8a44a7e8392598d038d2e01f7b33cf26d0/018acd67-263f-7f69-b7a8-1dc50d54a19a/source.tar.gz"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixos-23.05",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://flakehub.com/f/NixOS/nixpkgs/*.tar.gz"
       }
     },
     "poetry2nix": {
