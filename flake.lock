@@ -1,5 +1,28 @@
 {
   "nodes": {
+    "biobricks-R": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1695748726,
+        "narHash": "sha256-+PyXIuejK2ck4HlZzoJQQ/Ucu/7HonEfB4wuhcsBjKU=",
+        "owner": "biobricks-ai",
+        "repo": "biobricks-R",
+        "rev": "c22e6b225d11a4cbd472b70fdc5b6c6f4acf5a53",
+        "type": "github"
+      },
+      "original": {
+        "owner": "biobricks-ai",
+        "repo": "biobricks-R",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -108,6 +131,7 @@
     },
     "root": {
       "inputs": {
+        "biobricks-R": "biobricks-R",
         "flake-utils": "flake-utils",
         "hdt-cpp": "hdt-cpp",
         "morph-kgc": "morph-kgc",

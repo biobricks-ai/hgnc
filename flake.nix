@@ -4,6 +4,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     flake-utils.url = "github:numtide/flake-utils";
+    biobricks-R = {
+      url = "github:biobricks-ai/biobricks-R";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hdt-cpp = {
       url = "github:insilica/nix-hdt";
       inputs.flake-utils.follows = "flake-utils";
@@ -16,11 +21,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, hdt-cpp, morph-kgc }:
+  outputs = { self, nixpkgs, flake-utils, biobricks-R, hdt-cpp, morph-kgc }:
     flake-utils.lib.eachDefaultSystem (system:
       with import nixpkgs { inherit system; }; {
         devShells.default = mkShell {
           buildInputs = [
+            biobricks-R.packages.${system}.rEnv
             hdt-cpp.packages.${system}.default
             morph-kgc.packages.${system}.default
           ];
