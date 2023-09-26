@@ -15,40 +15,42 @@ stages:
     cmd: Rscript R/process.R
     deps:
     - path: R/process.R
-      md5: eae7ea1c73f619d7804c3868bba8fde7
-      size: 225
+      hash: md5
+      md5: 3986d4b9f2c5005a67f9eadd28d0b456
+      size: 227
     - path: download/
       md5: e6edde27937dc53e370ffb854bcd4a38.dir
       size: 16194945
       nfiles: 1
     outs:
-    - path: data/
-      md5: b3b7715d46dd95de610e29353a7c33b9.dir
-      size: 6149451
+    - path: brick/
+      hash: md5
+      md5: c902ffb9f351780ae218d6c585b8a3b0.dir
+      size: 6149452
       nfiles: 1
   rml:
     cmd: bash rml.sh
     deps:
-    - path: data/
+    - path: brick/
       hash: md5
-      md5: b3b7715d46dd95de610e29353a7c33b9.dir
-      size: 6149451
+      md5: c902ffb9f351780ae218d6c585b8a3b0.dir
+      size: 6149452
       nfiles: 1
     - path: hgnc_complete_set.rml.ttl
       hash: md5
-      md5: f170a6cb0ef1c398d202767bf310c5fd
-      size: 2242
+      md5: b57898af4bee13fc2e174e2965a5b5ea
+      size: 2243
     - path: morph-kgc.ini
       hash: md5
       md5: f52fda733d60f37576bdde9c9dd31e00
       size: 156
     - path: rml.sh
       hash: md5
-      md5: 59744507e0c29ed8a8a7ea6f356354f2
-      size: 158
+      md5: 75229f9773be78ef2bae14b2f72139ac
+      size: 148
     outs:
     - path: rdf/
       hash: md5
-      md5: 7043da2933fdbe7aa158fe4a9468e136.dir
+      md5: 043d7eca1c4bdb9b28217946774c1728.dir
       size: 3867753
       nfiles: 1

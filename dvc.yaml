@@ -11,11 +11,11 @@ stages:
       - download/
       - R/process.R
     outs:
-      - data/
+      - brick/
   rml:
     cmd: bash rml.sh
     deps:
-      - data/
+      - brick/
       - rml.sh
       - hgnc_complete_set.rml.ttl
       - morph-kgc.ini
