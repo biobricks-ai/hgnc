@@ -1,56 +1,59 @@
 schema: '2.0'
 stages:
   download:
-    cmd: Rscript R/download.R
+    cmd: Rscript stages/1_download.R
     deps:
-    - path: R/download.R
+    - path: stages/1_download.R
+      hash: md5
       md5: 037bd69ce926f02178c864dac5969fab
       size: 535
     outs:
     - path: download/
-      md5: e6edde27937dc53e370ffb854bcd4a38.dir
-      size: 16194945
+      hash: md5
+      md5: e770346a9db6b7da5115a0dda3f80b1f.dir
+      size: 16491131
       nfiles: 1
   process:
-    cmd: Rscript R/process.R
+    cmd: Rscript stages/2_process.R
     deps:
-    - path: R/process.R
+    - path: download/
+      hash: md5
+      md5: e770346a9db6b7da5115a0dda3f80b1f.dir
+      size: 16491131
+      nfiles: 1
+    - path: stages/2_process.R
       hash: md5
       md5: 3986d4b9f2c5005a67f9eadd28d0b456
       size: 227
-    - path: download/
-      md5: e6edde27937dc53e370ffb854bcd4a38.dir
-      size: 16194945
-      nfiles: 1
     outs:
     - path: brick/
       hash: md5
-      md5: c902ffb9f351780ae218d6c585b8a3b0.dir
-      size: 6149452
+      md5: 97a7ec298fdcd9f557407f3d0451c2dc.dir
+      size: 6264860
       nfiles: 1
   rml:
-    cmd: bash rml.sh
+    cmd: bash stages/3_rml.sh
     deps:
     - path: brick/
       hash: md5
-      md5: c902ffb9f351780ae218d6c585b8a3b0.dir
-      size: 6149452
+      md5: 97a7ec298fdcd9f557407f3d0451c2dc.dir
+      size: 6264860
       nfiles: 1
-    - path: hgnc_complete_set.rml.ttl
+    - path: deps.edn
       hash: md5
-      md5: b57898af4bee13fc2e174e2965a5b5ea
-      size: 2243
-    - path: morph-kgc.ini
+      md5: 72dc962882d30af4334f1a0b1fce09a5
+      size: 269
+    - path: stages/3_rml.sh
       hash: md5
-      md5: f52fda733d60f37576bdde9c9dd31e00
-      size: 156
-    - path: rml.sh
+      md5: d5349d41c7ebb5c4f474906c491f6e75
+      size: 170
+    - path: stages/rml.clj
       hash: md5
-      md5: 75229f9773be78ef2bae14b2f72139ac
-      size: 148
+      md5: 121d5e61fecbc540bfeec9830d9cdeb8
+      size: 3361
     outs:
     - path: rdf/
       hash: md5
-      md5: 043d7eca1c4bdb9b28217946774c1728.dir
-      size: 3867753
+      md5: 9ef0e4bf12141cf5fdc8b59e22ab7628.dir
+      size: 6919257
       nfiles: 1

@@ -1,23 +1,23 @@
 stages:
   download:
-    cmd: Rscript R/download.R
+    cmd: Rscript stages/1_download.R
     deps:
-      - R/download.R
+      - stages/1_download.R
     outs:
       - download/
   process:
-    cmd: Rscript R/process.R
+    cmd: Rscript stages/2_process.R
     deps:
       - download/
-      - R/process.R
+      - stages/2_process.R
     outs:
       - brick/
   rml:
-    cmd: bash rml.sh
+    cmd: bash stages/3_rml.sh
     deps:
       - brick/
-      - rml.sh
-      - hgnc_complete_set.rml.ttl
-      - morph-kgc.ini
+      - stages/3_rml.sh
+      - deps.edn
+      - stages/rml.clj
     outs:
       - rdf/
