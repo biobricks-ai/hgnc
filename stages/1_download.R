@@ -7,7 +7,7 @@ download_dir <- "download"
 fs::dir_create(download_dir)
 
 print("Downloading Files")
-url='http://ftp.ebi.ac.uk/pub/databases/genenames/hgnc/archive/monthly/tsv'
+url='https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt'
 ftp = stringr::str_replace(url,"http","ftp")
 url |> rvest::read_html() |> 
 rvest::html_elements("a") |> 
