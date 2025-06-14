@@ -22,3 +22,5 @@ hgnc  = bb.assets("hgnc")
 genes = pd.read_parquet(hgnc.hgnc_complete_set_parquet)
 
 genes.query("symbol == 'TP53'")[["hgnc_id", "name", "location"]]
+
+```
