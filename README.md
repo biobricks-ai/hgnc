@@ -1,13 +1,26 @@
-# HGNC
 
-<a href="https://github.com/biobricks-ai/HGNC/actions"><img src="https://github.com/biobricks-ai/HGNC/actions/workflows/bricktools-check.yaml/badge.svg?branch=master"/></a>
+---
 
-## Description
-> The HGNC is a resource for approved human gene nomenclature containing ~42000 gene symbols and names and 1300+ gene families and sets
+### **hgnc/README.md**
 
-## Usage
-```{R}
-biobricks::install_brick("HGNC")
-biobricks::brick_pull("HGNC")
-biobricks::brick_load("HGNC")
+```markdown
+# 📦 BioBricks.ai / HGNC   <!-- built 2025-06-12 -->
+
+_The HGNC (HUGO Gene Nomenclature Committee) maintains the official list
+of approved human gene symbols.  
+This brick snapshots the registry (April 2024) so every pipeline resolves
+a stable symbol → ID mapping, independent of future HGNC updates._
+hgnc_complete_set.parquet	6.3MB
+---
+
+## ➤ Quick start
+
+```python
+import biobricks as bb, pandas as pd
+
+hgnc  = bb.assets("hgnc")
+genes = pd.read_parquet(hgnc.hgnc_complete_set_parquet)
+
+genes.query("symbol == 'TP53'")[["hgnc_id", "name", "location"]]
+
 ```
